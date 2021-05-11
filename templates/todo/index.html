@@ -1,18 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="shortcut icon" href="{% static 'todo/cat.png' %}">
     <link rel="stylesheet" href="{% static 'todo/style.css' %}">
 
     <title>ToDo List</title>
 </head>
+
 <body>
     <div class='container'>
         <div class="col-md-4 col-md-offset-4">
@@ -28,9 +30,9 @@
                             {{form.title}}
                         </div>
                         <div class="col-md-2">
-                            <button  class="btn btn-primary btn-sm">Add</button>
+                            <button class="btn btn-primary btn-sm">Add</button>
                         </div>
-                        
+
                     </div>
                 </form>
             </div>
@@ -38,21 +40,20 @@
             <div class="row">
                 <div class="col-md-7">
                     {% if task.complete == True %}
-                    <strike>{{task}}</strike>
-                    {% else %}
-                    <span>{{task}}</span>
-                    {% endif %}
+                    <strike>{{task}}</strike> {% else %}
+                    <span>{{task}}</span> {% endif %}
                 </div>
                 <div class="col-md-5">
-                <a href="{% url 'update_task' task.id %}" class="btn btn-sm btn-info float-right">Edit</a>
-                <a href="{% url 'delete' task.id %}" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="{% url 'update_task' task.id %}" class="btn btn-sm btn-info float-right">Edit</a>
+                    <a href="{% url 'delete' task.id %}" class="btn btn-sm btn-danger">Delete</a>
 
                 </div>
             </div>
             {% endfor %}
         </div>
 
-        
+
     </div>
 </body>
+
 </html>
