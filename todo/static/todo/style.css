@@ -1,0 +1,12 @@
+body {
+    background-color: #faf2da;
+    font: 14px 'Nunito', sans-serif;
+  }
+
+  .container {
+    padding-top: 75px;
+  }
+
+  .row {
+    margin: 20px 0;
+  }
